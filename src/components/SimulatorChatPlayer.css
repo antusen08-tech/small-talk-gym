@@ -1,0 +1,251 @@
+.simulator-player {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 80px);
+  padding: 16px;
+  padding-bottom: 100px;
+}
+
+.simulator-player.empty {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.simulator-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.back-btn {
+  background: transparent;
+  border: none;
+  color: var(--leaf, #5850ec);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.scene-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.scene-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink, #171a3d);
+}
+
+.turn-count {
+  font-size: 12px;
+  color: var(--muted, #676a86);
+  background: var(--line, #e9e7f5);
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+.scene-setup {
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.setup-item {
+  display: flex;
+  gap: 8px;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.setup-item:last-child {
+  margin-bottom: 0;
+}
+
+.setup-label {
+  color: var(--muted, #676a86);
+  font-weight: 500;
+  min-width: 40px;
+}
+
+.chat-container {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 12px;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.message {
+  display: flex;
+}
+
+.message.user {
+  justify-content: flex-end;
+}
+
+.message.assistant {
+  justify-content: flex-start;
+}
+
+.bubble {
+  max-width: 85%;
+  padding: 14px 16px;
+  border-radius: 20px;
+  font-size: 15px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.message.user .bubble {
+  background: linear-gradient(135deg, var(--leaf) 0%, #7e79ff 100%);
+  color: white;
+  border-bottom-right-radius: 6px;
+}
+
+.message.assistant .bubble {
+  background: white;
+  color: var(--ink, #171a3d);
+  border: 1px solid var(--line, #e9e7f5);
+  border-bottom-left-radius: 6px;
+  box-shadow: 0 2px 8px rgba(46, 49, 112, 0.06);
+}
+
+.message.needs_guidance .bubble {
+  border-color: #f59e0b;
+  background: #fffbeb;
+}
+
+.message.boundary .bubble {
+  border-color: #ef4444;
+  background: #fef2f2;
+}
+
+.message.loading .bubble {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 14px 20px;
+}
+
+.typing-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--muted, #676a86);
+  border-radius: 50%;
+  animation: typing 1.4s infinite;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typing {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+  30% { transform: translateY(-4px); opacity: 1; }
+}
+
+.coach-hint {
+  display: flex;
+  gap: 10px;
+  padding: 14px 16px;
+  background: linear-gradient(135deg, #fff0df 0%, #fff8f0 100%);
+  border-radius: 16px;
+  margin-top: 12px;
+  animation: fadeIn 0.3s ease;
+}
+
+.hint-icon {
+  font-size: 18px;
+}
+
+.coach-hint p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #8b4d24;
+}
+
+.input-area {
+  flex-shrink: 0;
+}
+
+.input-wrapper {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+  background: white;
+  border-radius: 20px;
+  padding: 8px;
+  box-shadow: 0 4px 16px rgba(46, 49, 112, 0.1);
+}
+
+.input-wrapper textarea {
+  flex: 1;
+  border: none;
+  padding: 10px 12px;
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 1.4;
+  resize: none;
+  min-height: 44px;
+  max-height: 100px;
+}
+
+.input-wrapper textarea:focus {
+  outline: none;
+}
+
+.send-btn {
+  background: linear-gradient(135deg, var(--leaf) 0%, #7e79ff 100%);
+  color: white;
+  border: none;
+  border-radius: 16px;
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.send-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.send-btn:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.action-btn {
+  flex: 1;
+  background: white;
+  border: 1px solid var(--line, #e9e7f5);
+  border-radius: 14px;
+  padding: 10px;
+  font-size: 13px;
+  color: var(--muted, #676a86);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+  border-color: var(--leaf, #5850ec);
+  color: var(--leaf, #5850ec);
+}

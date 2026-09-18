@@ -1,0 +1,173 @@
+.records-screen {
+  padding: 20px;
+}
+
+.screen-header {
+  margin-bottom: 20px;
+}
+
+.screen-header h1 {
+  font-size: 26px;
+  margin: 8px 0 0;
+}
+
+.stats-card {
+  text-align: center;
+  padding: 24px;
+}
+
+.stat-main {
+  margin-bottom: 20px;
+}
+
+.stat-value {
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--leaf, #5850ec);
+}
+
+.stat-label {
+  display: block;
+  font-size: 14px;
+  color: var(--muted, #676a86);
+  margin-top: 4px;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line, #e9e7f5);
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--ink, #171a3d);
+}
+
+.stat-text {
+  font-size: 12px;
+  color: var(--muted, #676a86);
+}
+
+.loading-state,
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.empty-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.empty-state h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.empty-state p {
+  font-size: 14px;
+  margin: 0;
+}
+
+.section-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--muted, #676a86);
+  margin: 24px 0 12px;
+}
+
+.records-list {
+  margin-bottom: 20px;
+}
+
+.record-item {
+  padding: 16px;
+  margin-bottom: 10px;
+}
+
+.record-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.record-title {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.record-date {
+  font-size: 12px;
+  color: var(--muted, #676a86);
+}
+
+.record-meta {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.record-rating {
+  font-size: 16px;
+}
+
+.milestone-badge {
+  font-size: 11px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, var(--sun, #ff805c) 0%, #ff9068 100%);
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.record-note {
+  font-size: 14px;
+  color: var(--ink, #171a3d);
+  font-style: italic;
+  margin: 8px 0 0;
+}
+
+.milestones-section {
+  margin-top: 24px;
+}
+
+.milestone-card {
+  display: flex;
+  gap: 14px;
+  padding: 16px;
+}
+
+.milestone-icon {
+  font-size: 28px;
+}
+
+.milestone-content strong {
+  display: block;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.milestone-content p {
+  font-size: 14px;
+  color: var(--ink, #171a3d);
+  margin: 4px 0;
+}
+
+.milestone-date {
+  font-size: 12px;
+  color: var(--muted, #676a86);
+}

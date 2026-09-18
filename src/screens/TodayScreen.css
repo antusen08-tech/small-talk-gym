@@ -1,0 +1,106 @@
+.today-screen {
+  padding: 20px;
+}
+
+.today-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--leaf, #5850ec);
+}
+
+.today-header h1 {
+  font-size: 28px;
+  margin: 6px 0 0;
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #eeecff 0%, #e8e6ff 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+.today-intro {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.hero-card {
+  background: linear-gradient(135deg, #e8e9ff 0%, #fff0df 100%);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.hero-card:active {
+  transform: scale(0.98);
+}
+
+.hero-card .pill {
+  display: inline-block;
+  background: white;
+  color: var(--leaf, #5850ec);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.hero-card .task {
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+
+.hero-card .meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--muted, #676a86);
+  margin-bottom: 16px;
+}
+
+.progress-card .label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted, #676a86);
+  margin-bottom: 8px;
+}
+
+.progress-count {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink, #171a3d);
+}
+
+.progress-count.highlight {
+  color: var(--leaf, #5850ec);
+  font-size: 20px;
+}
+
+.progress-note {
+  font-size: 14px;
+  color: var(--muted, #676a86);
+  margin: 6px 0 12px;
+}
+
+.progress-card .tiny {
+  margin-top: 12px;
+  padding: 12px 16px;
+  font-size: 14px;
+}

@@ -1,0 +1,102 @@
+<style>
+.bgwrap3{background:linear-gradient(135deg,#bcd6f7,#8fb8ef 45%,#6f9de6 100%);border-radius:40px;padding:60px 40px;position:relative;overflow:hidden}
+.raylight3{position:absolute;width:280px;height:1000px;background:linear-gradient(100deg,rgba(255,255,255,.4),transparent);transform:rotate(18deg);top:-220px;left:52%}
+
+/* LAYER 1: outer slab, floats highest above background */
+.slab3{max-width:340px;margin:0 auto;position:relative;background:linear-gradient(160deg,#eaf2fd,#cfe0f8);border-radius:34px;padding:24px 20px 22px;
+  box-shadow:
+    0 4px 0 #a9c6ef,
+    0 10px 0 #8fb0e6,
+    0 50px 70px -20px rgba(15,40,95,.5),
+    inset 0 2px 0 rgba(255,255,255,.95),
+    inset 0 -8px 14px rgba(80,120,200,.12);
+}
+.slabhead{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.slabhead h1{font-size:19px;font-weight:900;color:#1c2f56;margin:0}
+.pillbtn{background:linear-gradient(160deg,#6f8ee8,#4364c9);color:#fff;font-weight:800;font-size:10.5px;padding:8px 14px;border-radius:16px;
+  box-shadow:0 2px 0 #2f4694,0 8px 14px rgba(30,50,120,.4), inset 0 1px 0 rgba(255,255,255,.4)}
+
+.searchpill3{display:flex;align-items:center;gap:10px;background:#fff;border-radius:18px;padding:12px 15px;margin-bottom:16px;
+  box-shadow:inset 0 3px 6px rgba(70,100,180,.22), inset 0 -1px 0 rgba(255,255,255,.7);color:#8098c4;font-size:12px;font-weight:600}
+
+/* LAYER 2: recessed tray — sits BELOW slab surface (inset shadow = pressed in) */
+.traywrap{position:relative;margin-bottom:18px}
+.pulltab{position:absolute;top:-7px;left:50%;transform:translateX(-50%);width:34px;height:14px;background:linear-gradient(160deg,#7d9df0,#5b7fe0);border-radius:0 0 8px 8px;
+  box-shadow:0 3px 6px rgba(30,50,120,.35);z-index:2}
+.tray{background:linear-gradient(160deg,#dbe8fb,#c7dbf6);border-radius:22px;padding:14px 12px;
+  box-shadow:inset 0 4px 10px rgba(50,80,160,.22), inset 0 -2px 4px rgba(255,255,255,.5)}
+
+/* LAYER 3: rows raised ABOVE the tray surface — highest local elevation */
+.rows3{display:flex;flex-direction:column;gap:10px}
+.row3{display:flex;align-items:center;gap:11px;background:#fff;border-radius:16px;padding:11px 12px;
+  box-shadow:0 3px 0 rgba(160,185,230,.6), 0 12px 20px rgba(50,80,160,.22), inset 0 1px 0 rgba(255,255,255,.9);}
+.row3.done{background:linear-gradient(160deg,#6c8cf0,#4364c9);box-shadow:0 3px 0 #2f4694, 0 14px 22px rgba(30,50,120,.4), inset 0 1px 0 rgba(255,255,255,.3)}
+.row3.done .t{color:#fff}
+.row3.done .d{color:#dbe6ff}
+.row3 .icon3{width:32px;height:32px;border-radius:11px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;color:#fff;
+  box-shadow:0 3px 0 rgba(0,0,0,.18), 0 6px 10px rgba(0,0,0,.2), inset 0 1px 0 rgba(255,255,255,.55)}
+.icon3.green{background:linear-gradient(160deg,#6bd08f,#3fae67)}
+.icon3.red{background:linear-gradient(160deg,#f78a8a,#e35a5a)}
+.icon3.blue{background:linear-gradient(160deg,#7d9df0,#5b7fe0)}
+.row3 .t{font-size:12.5px;font-weight:800;color:#20345e}
+.row3 .d{font-size:10px;color:#7c8fbd;font-weight:600}
+.row3 .x{margin-left:auto;width:24px;height:24px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;color:#4364c9;
+  box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.row3.done .x{background:#eaf1ff}
+
+/* LAYER 4: bottom buttons — same elevation family as rows but wider */
+.btnrow3{display:flex;gap:10px;margin-top:18px}
+.btn3{flex:1;text-align:center;padding:14px;border-radius:20px;font-weight:900;font-size:12.5px}
+.btn3.primary{background:linear-gradient(160deg,#6f8ee8,#4364c9);color:#fff;
+  box-shadow:0 4px 0 #2f4694, 0 14px 22px rgba(20,40,110,.45), inset 0 1px 0 rgba(255,255,255,.35)}
+.btn3.ghost{background:#fff;color:#5b74a3;
+  box-shadow:0 4px 0 #cddbf5, 0 10px 16px rgba(50,80,160,.15), inset 0 1px 0 rgba(255,255,255,.8)}
+</style>
+
+<h2>更强层次感版本（v5）</h2>
+<p class="subtitle">现在有 4 层明确的深度：① 背景 ② 悬浮的外层大卡片 ③ 卡片内部"凹陷"的列表托盘（内阴影，带一个小拉手） ④ 托盘上"浮起"的每一行（比托盘阴影更强，看起来是压在托盘表面上的）。</p>
+
+<div class="bgwrap3">
+  <div class="raylight3"></div>
+  <div class="slab3">
+    <div class="slabhead">
+      <h1>早安，Amir</h1>
+      <div class="pillbtn">全部标记</div>
+    </div>
+
+    <div class="searchpill3">🔍 找一个场景练练看 <span style="margin-left:auto">⌄</span></div>
+
+    <div class="traywrap">
+      <div class="pulltab"></div>
+      <div class="tray">
+        <div class="rows3">
+          <div class="row3 done">
+            <div class="icon3 green">✓</div>
+            <div><div class="t">先看开口绿灯</div><div class="d">Coach · 已完成</div></div>
+            <div class="x">✕</div>
+          </div>
+          <div class="row3">
+            <div class="icon3 blue">☕</div>
+            <div><div class="t">跨部门咖啡局</div><div class="d">练习 · 新情境</div></div>
+            <div class="x">›</div>
+          </div>
+          <div class="row3">
+            <div class="icon3 red">💬</div>
+            <div><div class="t">抓关键词接话</div><div class="d">Coach · 技能 4</div></div>
+            <div class="x">›</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="btnrow3">
+      <div class="btn3 primary">开始</div>
+      <div class="btn3 ghost">跳过今天</div>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="margin-top:20px">
+  <p class="label">说说感受</p>
+  <p class="subtitle">这个层次感够了吗？还是想要某一层更夸张（比如托盘凹得更深，或者行浮得更高）？</p>
+</div>

@@ -1,0 +1,74 @@
+<style>
+.phoneframe{width:300px;border-radius:46px;padding:14px;background:#1a1a1a;box-shadow:0 30px 60px -20px rgba(0,0,0,.35)}
+.phonescreen{border-radius:34px;overflow:hidden;background:linear-gradient(160deg,#ffe3c2,#ffd2a6 60%,#f6c090);position:relative;min-height:560px;display:flex;flex-direction:column}
+.statusbar{height:34px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font-size:11px;color:#5c3d1f;font-weight:700}
+.notch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:90px;height:20px;background:#1a1a1a;border-radius:0 0 14px 14px}
+
+.simbody{flex:1;padding:6px 18px 10px;overflow:hidden}
+.simhead{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.simhead .who{font-size:12px;color:#5c3d1f}
+.simhead .t{font-size:14px;font-weight:800;color:#5c3d1f}
+.scenecard{background:linear-gradient(160deg,#fff,#fff6ea);border-radius:20px;padding:11px 14px;margin-bottom:12px;box-shadow:0 8px 18px rgba(0,0,0,.10), inset 0 1px 0 rgba(255,255,255,.6);font-size:11px;color:#8a6a45;line-height:1.6}
+.scenecard b{color:#5c3d1f}
+.bubblewrap{display:flex;flex-direction:column;gap:8px;margin-bottom:12px}
+.bubble{max-width:78%;padding:10px 13px;border-radius:18px;font-size:12.5px;line-height:1.5;box-shadow:0 6px 14px rgba(0,0,0,.10)}
+.bubble.them{align-self:flex-start;background:#fff;color:#5c3d1f;border-bottom-left-radius:6px}
+.bubble.me{align-self:flex-end;background:linear-gradient(160deg,#e2a45f,#c97f34);color:#fff;border-bottom-right-radius:6px}
+.hint{align-self:center;font-size:10px;color:#a3835f;background:#fff6ea;padding:4px 12px;border-radius:12px}
+.turnrow{display:flex;gap:7px}
+.turnbtn{flex:1;text-align:center;font-size:10.5px;font-weight:700;padding:9px 3px;border-radius:14px;box-shadow:0 6px 12px rgba(0,0,0,.10)}
+
+.tabbar{background:rgba(255,255,255,.75);backdrop-filter:blur(6px);margin:0 10px 10px;border-radius:22px;display:flex;justify-content:space-around;padding:10px 4px 8px;box-shadow:0 -6px 16px rgba(0,0,0,.06), 0 6px 14px rgba(0,0,0,.08)}
+.tabitem{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:9.5px;color:#a3835f;font-weight:700}
+.tabitem .ic{width:26px;height:26px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:14px}
+.tabitem.active .ic{background:linear-gradient(145deg,#e2a45f,#c97f34);color:#fff;box-shadow:0 4px 8px rgba(201,127,52,.4)}
+.tabitem.active{color:#5c3d1f}
+.homeindicator{width:110px;height:4px;background:#1a1a1a;border-radius:3px;margin:8px auto 2px}
+</style>
+
+<h2>加上手机边框 + 底部导航（v2）</h2>
+<p class="subtitle">补齐状态栏、安全区留白，以及"今天／学习／练习／我的记录"四个底部标签，当前高亮"练习"。</p>
+
+<div class="claywrap">
+  <div class="phoneframe">
+    <div class="phonescreen">
+      <div class="notch"></div>
+      <div class="statusbar"><span>9:41</span><span>●●● 5G 🔋</span></div>
+
+      <div class="simbody">
+        <div class="simhead">
+          <div class="clay-avatar" style="width:36px;height:36px;font-size:16px;background:linear-gradient(145deg,#fff0dc,#ffe1bd)">☕</div>
+          <div><div class="t">跨部门咖啡局</div><div class="who">和你旁边的同事 · 刚坐下</div></div>
+        </div>
+
+        <div class="scenecard"><b>当前对话线：</b>桌上的饮品、今天的安排。旁边同事点了燕麦拿铁，气氛轻松。</div>
+
+        <div class="bubblewrap">
+          <div class="bubble them">（对方看了看你的杯子）你也点了燕麦拿铁？</div>
+          <div class="bubble me">对啊，最近开始喝这个，你常喝吗？</div>
+          <div class="hint">对方接住了你的问题 · 继续吧</div>
+          <div class="bubble them">还好，今天第一次试冰的，意外地不错。</div>
+        </div>
+
+        <div class="turnrow">
+          <div class="turnbtn" style="background:linear-gradient(160deg,#fff,#fff6ea);color:#5c3d1f">继续一轮</div>
+          <div class="turnbtn" style="background:linear-gradient(160deg,#fff,#fff6ea);color:#5c3d1f">自然收尾</div>
+          <div class="turnbtn" style="background:linear-gradient(160deg,#e2a45f,#c97f34);color:#fff">结束练习</div>
+        </div>
+      </div>
+
+      <div class="tabbar">
+        <div class="tabitem"><div class="ic">🏠</div>今天</div>
+        <div class="tabitem"><div class="ic">📖</div>学习</div>
+        <div class="tabitem active"><div class="ic">💬</div>练习</div>
+        <div class="tabitem"><div class="ic">📔</div>我的记录</div>
+      </div>
+      <div class="homeindicator"></div>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="margin-top:20px">
+  <p class="label">说说感受</p>
+  <p class="subtitle">底部导航栏够明显了吗？边框比例、状态栏、安全区间距还要不要再调？</p>
+</div>

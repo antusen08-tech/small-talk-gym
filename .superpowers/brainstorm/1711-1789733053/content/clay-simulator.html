@@ -1,0 +1,57 @@
+<style>
+.simphone{width:300px;border-radius:34px;padding:18px 16px;box-sizing:border-box;background:linear-gradient(160deg,#ffe3c2,#ffd2a6 60%,#f6c090);box-shadow:0 30px 60px -20px rgba(0,0,0,.25);position:relative;overflow:hidden}
+.simhead{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.simhead .who{font-size:12px;color:#5c3d1f}
+.simhead .t{font-size:14px;font-weight:800;color:#5c3d1f}
+.scenecard{background:linear-gradient(160deg,#fff,#fff6ea);border-radius:20px;padding:12px 14px;margin-bottom:14px;box-shadow:0 8px 18px rgba(0,0,0,.10), inset 0 1px 0 rgba(255,255,255,.6);font-size:11px;color:#8a6a45;line-height:1.6}
+.scenecard b{color:#5c3d1f}
+.bubblewrap{display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
+.bubble{max-width:78%;padding:11px 14px;border-radius:18px;font-size:13px;line-height:1.5;box-shadow:0 6px 14px rgba(0,0,0,.10)}
+.bubble.them{align-self:flex-start;background:#fff;color:#5c3d1f;border-bottom-left-radius:6px}
+.bubble.me{align-self:flex-end;background:linear-gradient(160deg,#e2a45f,#c97f34);color:#fff;border-bottom-right-radius:6px}
+.hint{align-self:center;font-size:10px;color:#a3835f;background:#fff6ea;padding:5px 12px;border-radius:12px}
+.choicerow{display:flex;flex-direction:column;gap:8px}
+.claychoice{background:#fff;border-radius:16px;padding:11px 14px;font-size:12.5px;color:#5c3d1f;box-shadow:0 6px 14px rgba(0,0,0,.08), inset 0 1px 0 rgba(255,255,255,.7)}
+.turnrow{display:flex;gap:8px;margin-top:14px}
+.turnbtn{flex:1;text-align:center;font-size:11px;font-weight:700;padding:10px 4px;border-radius:14px;box-shadow:0 6px 12px rgba(0,0,0,.10)}
+</style>
+
+<h2>Simulator 对话页 — 暖调粘土版</h2>
+<p class="subtitle">场景卡收起在顶部，气泡用同样的圆润+柔和阴影质感，AI 方是白色气泡、用户方是暖橙渐变气泡。</p>
+
+<div class="claywrap">
+  <div class="simphone">
+    <div class="pill" style="width:60px;height:60px;background:#fff;top:-10px;right:-20px"></div>
+    <div class="simhead">
+      <div class="clay-avatar" style="width:38px;height:38px;font-size:18px;background:linear-gradient(145deg,#fff0dc,#ffe1bd)">☕</div>
+      <div><div class="t">跨部门咖啡局</div><div class="who">和你旁边的同事 · 刚坐下</div></div>
+    </div>
+
+    <div class="scenecard">
+      <b>当前对话线：</b>桌上的饮品、今天的安排。旁边同事点了燕麦拿铁，气氛轻松。
+    </div>
+
+    <div class="bubblewrap">
+      <div class="bubble them">（对方看了看你的杯子）你也点了燕麦拿铁？</div>
+      <div class="bubble me">对啊，最近开始喝这个，你常喝吗？</div>
+      <div class="hint">对方接住了你的问题，气氛自然 · 继续吧</div>
+      <div class="bubble them">还好，今天第一次试冰的，意外地不错。</div>
+    </div>
+
+    <div class="choicerow">
+      <div class="claychoice">接住"冰的"，问问她平常的喝法</div>
+      <div class="claychoice">聊聊今天的安排，转个轻话题</div>
+    </div>
+
+    <div class="turnrow">
+      <div class="turnbtn" style="background:linear-gradient(160deg,#fff,#fff6ea);color:#5c3d1f">继续一轮</div>
+      <div class="turnbtn" style="background:linear-gradient(160deg,#fff,#fff6ea);color:#5c3d1f">自然收尾</div>
+      <div class="turnbtn" style="background:linear-gradient(160deg,#e2a45f,#c97f34);color:#fff">结束练习</div>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="margin-top:20px">
+  <p class="label">说说感受</p>
+  <p class="subtitle">气泡配色、场景卡收起的样式、底部三个按钮的比例，有没有想调的？确认了这版我们就定稿视觉方向，写进设计文档。</p>
+</div>

@@ -1,0 +1,31 @@
+:root {
+  --ink: #171a3d;
+  --muted: #676a86;
+  --leaf: #5850ec;
+  --sun: #ff805c;
+  
+  /* Blue-purple gradient colors */
+  --bg-start: #bcd6f7;
+  --bg-mid: #8fb8ef;
+  --bg-end: #6f9de6;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-mid) 50%, var(--bg-end) 100%);
+  min-height: 100vh;
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}

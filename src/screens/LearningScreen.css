@@ -1,0 +1,150 @@
+.learning-screen {
+  padding: 20px;
+}
+
+.screen-header {
+  margin-bottom: 20px;
+}
+
+.screen-header h1 {
+  font-size: 26px;
+  margin: 8px 0 10px;
+}
+
+.screen-header p {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.level-card {
+  background: white;
+  border-radius: 24px;
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 20px rgba(46, 49, 112, 0.08);
+}
+
+.level-card.locked {
+  opacity: 0.6;
+}
+
+.level-status {
+  margin-bottom: 10px;
+}
+
+.pill {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.pill.available {
+  background: white;
+  color: var(--leaf, #5850ec);
+  border: 2px solid var(--leaf, #5850ec);
+}
+
+.pill.locked {
+  background: var(--line, #e9e7f5);
+  color: var(--muted, #676a86);
+}
+
+.level-title {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.level-desc {
+  font-size: 14px;
+  color: var(--muted, #676a86);
+  margin-bottom: 14px;
+}
+
+.level-progress {
+  margin-bottom: 14px;
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--muted, #676a86);
+  margin-bottom: 6px;
+}
+
+.progress-track {
+  height: 8px;
+  background: var(--line, #e9e7f5);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--leaf, #5850ec), #7e79ff);
+  border-radius: 8px;
+  transition: width 0.4s ease;
+}
+
+.level-card .primary {
+  margin-bottom: 12px;
+}
+
+.skills-expand {
+  border-top: 1px solid var(--line, #e9e7f5);
+  padding-top: 12px;
+}
+
+.skills-expand summary {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted, #676a86);
+  cursor: pointer;
+}
+
+.skills-expand summary::-webkit-details-marker {
+  display: none;
+}
+
+.skills-expand summary::after {
+  content: '⌄';
+  font-size: 16px;
+  transition: transform 0.2s;
+}
+
+.skills-expand[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.skills-expand summary span {
+  font-weight: 400;
+  font-size: 13px;
+}
+
+.skills-list {
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.skills-list li {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--ink, #171a3d);
+  padding-left: 16px;
+  position: relative;
+}
+
+.skills-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--leaf, #5850ec);
+}
