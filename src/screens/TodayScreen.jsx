@@ -55,6 +55,14 @@ export function TodayScreen({ onNavigate, user }) {
       setTodayRecommendation({
         type: 'coach',
         skill: skills[0],
+        title: skills[0].title || '从共同情境自然开场',
+        duration: '约 30 秒'
+      })
+    } else {
+      // Fallback recommendation if database is empty
+      setTodayRecommendation({
+        type: 'coach',
+        skill: null,
         title: '从共同情境自然开场',
         duration: '约 30 秒'
       })

@@ -61,7 +61,31 @@ function App() {
   }
 
   async function handleSavePractice() {
-    if (!user || !completionData) return
+    if (!completionData) return
+
+    if (!user) {
+      // Allow saving without login for testing (uses anonymous record)
+      const record = {
+        user_id: 'test-user',
+        completed_at: new Date().toISOString(),
+        user_reflection_text: completionData.reflection || null,
+        rating: completionData.rating || null,
+        scene_card_id: completionData.type === 'simulator' ? completionData.sceneCard?.id || null : null,
+        skill_card_id: completionData.type === 'coach' ? 'test-skill' : null,
+        milestone_flag: false
+      }
+
+      try {
+        await supabase.from('practice_records').insert([record])
+      } catch {
+        // Ignore DB errors in test mode
+      }
+
+      setShowCompletion(false)
+      setCompletionData(null)
+      setCurrentScreen(SCREENS.records)
+      return
+    }
 
     try {
       const record = {
@@ -73,7 +97,6 @@ function App() {
 
       if (completionData.type === 'coach') {
         // Mark skill cards as completed
-        // In real app, you'd save each skill card completion
       } else if (completionData.type === 'simulator') {
         record.scene_card_id = completionData.sceneCard?.id || null
       }

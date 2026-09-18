@@ -149,15 +149,17 @@ export function CoachCardPlayer({ level = '初阶', onComplete, onExit }) {
         )}
 
         {showFeedback && (
-          <div className={`feedback ${selectedChoice?.isCorrect || userInput ? 'show' : ''}`}>
+          <div className={`feedback show ${selectedChoice?.isCorrect ? 'correct' : 'wrong'}`}>
             {userInput ? (
               <p>
                 {userInput.length > 5 
                   ? "你已经有自己的想法了。继续练习，会越来越自然。" 
                   : "先写一句你的版本。重点是从共同情境开始。"}
               </p>
+            ) : selectedChoice?.isCorrect ? (
+              <p>{selectedChoice.feedback || ''}</p>
             ) : (
-              <p>{selectedChoice?.feedback || ''}</p>
+              <p>{selectedChoice?.feedback || '这个选择不太合适。试试换一个角度思考。'}</p>
             )}
           </div>
         )}

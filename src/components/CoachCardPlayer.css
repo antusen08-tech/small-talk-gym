@@ -202,12 +202,28 @@
   animation: fadeIn 0.3s ease;
 }
 
+.feedback.wrong {
+  background: linear-gradient(135deg, #fff0f0 0%, #ffe8e8 100%);
+}
+
+.feedback.correct {
+  background: linear-gradient(135deg, #f0fdf4 0%, #e8f5e9 100%);
+}
+
 .feedback p {
   margin: 0;
   font-size: 15px;
   line-height: 1.6;
   color: var(--leaf, #5850ec);
   font-weight: 600;
+}
+
+.feedback.wrong p {
+  color: #dc2626;
+}
+
+.feedback.correct p {
+  color: #22c55e;
 }
 
 @keyframes fadeIn {
