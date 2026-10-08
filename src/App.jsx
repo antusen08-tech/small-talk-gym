@@ -4,6 +4,8 @@ import { TodayScreen } from './screens/TodayScreen'
 import { LearningScreen } from './screens/LearningScreen'
 import { PracticeScreen } from './screens/PracticeScreen'
 import { RecordsScreen } from './screens/RecordsScreen'
+import { VoiceScreen } from './screens/VoiceScreen'
+import { VoiceLessonPlayer } from './components/VoiceLessonPlayer'
 import { CoachCardPlayer } from './components/CoachCardPlayer'
 import { SimulatorChatPlayer } from './components/SimulatorChatPlayer'
 import './App.css'
@@ -14,6 +16,8 @@ const SCREENS = {
   coach: 'coach',
   simHub: 'simHub',
   simulator: 'simulator',
+  voiceHub: 'voiceHub',
+  voiceLesson: 'voiceLesson',
   records: 'records'
 }
 
@@ -22,6 +26,7 @@ function App() {
   const [user, setUser] = useState(null)
   const [selectedLevel, setSelectedLevel] = useState('初阶')
   const [selectedScene, setSelectedScene] = useState(null)
+  const [selectedVoiceLesson, setSelectedVoiceLesson] = useState(null)
   const [showCompletion, setShowCompletion] = useState(false)
   const [completionData, setCompletionData] = useState(null)
 
@@ -45,6 +50,9 @@ function App() {
     } else if (screen === 'simulator') {
       if (data) setSelectedScene(data)
       setCurrentScreen(SCREENS.simulator)
+    } else if (screen === 'voiceLesson') {
+      if (data) setSelectedVoiceLesson(data)
+      setCurrentScreen(SCREENS.voiceLesson)
     } else {
       setCurrentScreen(SCREENS[screen] || screen)
     }
@@ -118,7 +126,7 @@ function App() {
   function getNavButtonClass(screen) {
     const isActive = 
       (screen === 'today' && currentScreen === SCREENS.today) ||
-      (screen === 'coachHub' && [SCREENS.coachHub, SCREENS.coach].includes(currentScreen)) ||
+      (screen === 'coachHub' && [SCREENS.coachHub, SCREENS.coach, SCREENS.voiceHub, SCREENS.voiceLesson].includes(currentScreen)) ||
       (screen === 'simHub' && [SCREENS.simHub, SCREENS.simulator].includes(currentScreen)) ||
       (screen === 'records' && currentScreen === SCREENS.records)
     
@@ -153,6 +161,19 @@ function App() {
             level={selectedLevel}
             onComplete={handleCoachComplete}
             onExit={() => navigate('coachHub')}
+          />
+        )}
+
+        {currentScreen === SCREENS.voiceHub && (
+          <VoiceScreen onNavigate={navigate} />
+        )}
+
+        {currentScreen === SCREENS.voiceLesson && selectedVoiceLesson && (
+          <VoiceLessonPlayer
+            key={selectedVoiceLesson.id}
+            lesson={selectedVoiceLesson}
+            onFinish={() => navigate('voiceHub')}
+            onExit={() => navigate('voiceHub')}
           />
         )}
 

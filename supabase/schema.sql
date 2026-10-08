@@ -100,3 +100,22 @@ CREATE INDEX idx_scene_cards_theme ON scene_cards(theme_id, scene_order);
 CREATE INDEX idx_practice_records_user ON practice_records(user_id, completed_at DESC);
 CREATE INDEX idx_practice_records_scene ON practice_records(scene_card_id);
 CREATE INDEX idx_practice_records_skill ON practice_records(skill_card_id);
+
+-- voice_lessons: 声音与口齿训练课程（steps 为 JSONB，结构见 src/data/voiceLessons.js）
+CREATE TABLE IF NOT EXISTS voice_lessons (
+  id TEXT PRIMARY KEY,
+  lesson_order INTEGER NOT NULL UNIQUE,
+  module TEXT NOT NULL,
+  title TEXT NOT NULL,
+  title_zh TEXT NOT NULL,
+  minutes INTEGER NOT NULL DEFAULT 5,
+  goal TEXT NOT NULL,
+  steps JSONB NOT NULL,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+ALTER TABLE voice_lessons ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "Public read voice_lessons"
+  ON voice_lessons FOR SELECT
+  USING (true);

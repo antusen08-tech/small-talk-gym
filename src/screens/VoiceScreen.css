@@ -1,0 +1,140 @@
+.voice-screen {
+  padding: 20px;
+  padding-bottom: 100px;
+}
+
+.voice-screen .back-btn {
+  background: transparent;
+  border: none;
+  color: var(--leaf, #5850ec);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 4px 0 8px;
+}
+
+.voice-today .streak-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.voice-today .streak {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.voice-today .streak b {
+  font-size: 26px;
+  color: var(--leaf);
+  margin-right: 2px;
+}
+
+.week {
+  display: flex;
+  gap: 6px;
+}
+
+.week .day {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 11px;
+  font-weight: 700;
+  background: #eeedf8;
+  color: var(--muted);
+}
+
+.week .day.done {
+  background: linear-gradient(135deg, var(--leaf), #7e79ff);
+  color: #fff;
+}
+
+.week .day.today {
+  outline: 2px solid var(--sun);
+  outline-offset: 2px;
+}
+
+.voice-today-title {
+  font-size: 20px;
+  font-weight: 800;
+  margin-top: 10px;
+}
+
+.voice-today-zh {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--leaf);
+  margin-top: 2px;
+}
+
+.voice-module {
+  margin-top: 22px;
+}
+
+.module-name {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 1px 6px rgba(46, 49, 112, 0.35);
+  margin: 0 4px 8px;
+}
+
+.lesson-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  background: white;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 16px rgba(46, 49, 112, 0.08);
+  color: var(--ink);
+}
+
+.lesson-row.next {
+  border-color: var(--leaf);
+}
+
+.lesson-no {
+  flex: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  background: #f0eeff;
+  color: var(--leaf);
+  font-weight: 800;
+  display: grid;
+  place-items: center;
+}
+
+.lesson-text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.lesson-text b {
+  font-size: 15px;
+}
+
+.lesson-text small {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.lesson-min {
+  flex: none;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+}
