@@ -74,17 +74,6 @@ export function LearningScreen({ onNavigate, user }) {
         <p>每一阶都有明确技能和题目数。完成前一阶，才会解锁下一阶。</p>
       </header>
 
-      <div className="level-card voice-entry">
-        <div className="level-status">
-          <span className="pill available">每天 5 分钟</span>
-        </div>
-        <div className="level-title">声音与口齿训练</div>
-        <p className="level-desc">14 节小课：呼吸、吐字、语速、停顿、音量、重音。录下来回放，并得到温和的反馈。</p>
-        <button className="primary" onClick={() => onNavigate('voiceHub')}>
-          进入声音训练
-        </button>
-      </div>
-
       {levels.map((level, idx) => (
         <div key={level.id} className={`level-card ${level.locked ? 'locked' : ''}`}>
           {level.unlocked ? (

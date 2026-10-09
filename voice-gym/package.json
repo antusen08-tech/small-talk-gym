@@ -1,0 +1,18 @@
+{
+  "name": "voice-gym",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "每天 5 分钟的声音与口齿训练（独立应用，与 Small Talk Gym 无代码或数据耦合）",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^6.1.1",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "vite": "^8.3.0"
+  }
+}

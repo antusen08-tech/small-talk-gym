@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { supabase } from '../lib/supabase'
-import { loadProgress, currentStreak, dateKey, practicedDates } from '../lib/voiceProgress'
 import './TodayScreen.css'
 
 export function TodayScreen({ onNavigate, user }) {
@@ -79,10 +78,6 @@ export function TodayScreen({ onNavigate, user }) {
     return '晚上好'
   }
 
-  const voiceProgress = loadProgress()
-  const voiceStreak = currentStreak(voiceProgress)
-  const voiceDoneToday = practicedDates(voiceProgress).has(dateKey())
-
   const userName = user?.email?.split('@')[0] || '朋友'
 
   return (
@@ -109,17 +104,6 @@ export function TodayScreen({ onNavigate, user }) {
           <button className="primary">开始这一组</button>
         </div>
       )}
-
-      <div className="card progress-card">
-        <div className="label">声音与口齿 · 每日 5 分钟</div>
-        <div className="progress-count">
-          {voiceDoneToday ? '今天的声音练习已完成 ✓' : '今天还没练声音'}
-        </div>
-        <p className="progress-note">{voiceStreak > 0 ? `已连续 ${voiceStreak} 天。` : '从第一节开始，每天只练一点。'}</p>
-        <button className="secondary tiny" onClick={() => onNavigate('voiceHub')}>
-          {voiceDoneToday ? '再练一次' : '开始今天的声音练习'}
-        </button>
-      </div>
 
       <div className="card progress-card">
         <div className="label">你的进度</div>

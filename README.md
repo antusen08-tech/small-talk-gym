@@ -12,16 +12,6 @@
 ✅ Coach 和 Simulator 组件已完成  
 ✅ 四个主屏幕已实现  
 
-## 声音与口齿训练（Voice）
-
-入口：「学习」页顶部卡片 / 「今天」页。14 节小课（约 5 分钟/天），每节由 学习 → 热身 → 朗读 → 开口说 组成，录音后给出场景化观察（语速、清晰度、音量、句尾是否变弱、停顿），不打"对/错"分。
-
-- 课程内容：`src/data/voiceLessons.js`（同结构存于 Supabase `voice_lessons` 表，缺表时回退本地）。改内容后运行 `node scripts/gen-voice-seed.mjs` 重新生成 `supabase/seed-voice-lessons.sql`。
-- 渲染：`VoiceLessonPlayer`（通用，按 step 类型渲染）、`VoiceScreen`（课程列表 + 连续天数）。
-- 分析：`src/lib/voiceAnalysis.js`（纯函数）；录音/音量/语音转文字：`src/lib/useVoiceRecorder.js`，全部在浏览器本地完成，音频不上传。语音转文字需要 Chrome / Edge；其他浏览器仍可录音并分析音量与停顿。
-- 进度：先存 `localStorage`（免登录即可每天打卡），后续再同步到 Supabase。
-- 练习语言：每个 step 可设 `lang`（默认 `en-US`）；练中文发音时改成 `zh-CN` 并换文本。
-
 ## 技术栈
 
 - **前端**: React 19 + Vite 8

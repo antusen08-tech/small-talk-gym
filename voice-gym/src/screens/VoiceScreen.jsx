@@ -1,18 +1,11 @@
-import { useEffect, useMemo, useState } from 'react'
-import { loadVoiceLessons } from '../lib/voiceLessons'
+import { useMemo, useState } from 'react'
 import { VOICE_LESSONS } from '../data/voiceLessons'
 import { currentStreak, loadProgress, practicedDates, recommendedLesson, weekStrip, dateKey } from '../lib/voiceProgress'
 import './VoiceScreen.css'
 
-export function VoiceScreen({ onNavigate }) {
-  const [lessons, setLessons] = useState(VOICE_LESSONS)
+export function VoiceScreen({ onOpenLesson }) {
+  const lessons = VOICE_LESSONS
   const [progress] = useState(() => loadProgress())
-
-  useEffect(() => {
-    let alive = true
-    loadVoiceLessons().then((l) => alive && setLessons(l))
-    return () => { alive = false }
-  }, [])
 
   const today = recommendedLesson(lessons, progress)
   const streak = currentStreak(progress)
@@ -31,7 +24,6 @@ export function VoiceScreen({ onNavigate }) {
 
   return (
     <div className="voice-screen">
-      <button className="back-btn" onClick={() => onNavigate('coachHub')}>← 学习</button>
       <header className="screen-header">
         <span className="eyebrow">声音与口齿 · Voice</span>
         <h1>每天练一点，声音会变稳。</h1>
@@ -51,7 +43,7 @@ export function VoiceScreen({ onNavigate }) {
         <div className="voice-today-title">Lesson {today.order} · {today.title}</div>
         <div className="voice-today-zh">{today.title_zh} · {today.minutes} 分钟</div>
         <p>{today.goal}</p>
-        <button className="primary" onClick={() => onNavigate('voiceLesson', today)}>
+        <button className="primary" onClick={() => onOpenLesson(today)}>
           {doneToday ? '再练这一节' : '开始今天这一组'}
         </button>
       </div>
@@ -60,7 +52,7 @@ export function VoiceScreen({ onNavigate }) {
         <section key={g.name} className="voice-module">
           <div className="module-name">{g.name}</div>
           {g.items.map((l) => (
-            <button key={l.id} className={`lesson-row ${l.id === today.id ? 'next' : ''}`} onClick={() => onNavigate('voiceLesson', l)}>
+            <button key={l.id} className={`lesson-row ${l.id === today.id ? 'next' : ''}`} onClick={() => onOpenLesson(l)}>
               <span className="lesson-no">{l.order}</span>
               <span className="lesson-text">
                 <b>{l.title}</b>

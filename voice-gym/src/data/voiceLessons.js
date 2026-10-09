@@ -1,6 +1,6 @@
 // 声音与口齿训练课程（数据）。
 // 渲染由 VoiceLessonPlayer 通用完成；每个 lesson 是一组 steps。
-// 同一份结构对应 supabase 的 voice_lessons 表（steps 为 JSONB），见 supabase/schema.sql。
+// 课程内容是纯数据；要增删课程只改这个文件，不需要写新的界面代码。
 //
 // step 类型：
 //   learn  { title, body, tips[] }                         —— 读一小段原理
